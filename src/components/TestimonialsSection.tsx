@@ -13,22 +13,22 @@ const TestimonialsSection = () => {
         
         {/* === Left Image (Oval Capsule Shape) === */}
         <div className="relative md:-ml-44 -mt-10 md:mt-0">
-          <div className="w-[200px] h-[300px] md:w-[260px] md:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white">
+          <div className="w-[200px] h-[300px] md:w-[260px] md:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
             <img
               src={testimonialPhoto}
               alt="Happy Client"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-[140px]"
             />
           </div>
         </div>
 
         {/* === Right Text Content === */}
         <div className="md:ml-10 mt-6 md:mt-0 text-center md:text-left max-w-[600px]">
-          <h2 className="text-[1.8rem] md:text-[2rem] font-serif text-[#1a1a1a] mb-4">
+          <h2 className="text-[1.8rem] md:text-[2rem] font-serif text-[#1a1a1a] mb-4 text-shimmer">
             HAPPY CLIENTS
           </h2>
 
-          <h3 className="text-[1.1rem] md:text-[1.25rem] font-semibold text-[#222] mb-3">
+          <h3 className="text-[1.1rem] md:text-[1.25rem] font-semibold text-[#222] mb-3 glow-shimmer">
             A Complete Soul Reset
           </h3>
 
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
           </p>
 
           {/* === Star rating === */}
-          <div className="flex justify-center md:justify-start text-[#f6c744] text-[1.1rem] mb-2">
+          <div className="flex justify-center md:justify-start text-[#f6c744] text-[1.1rem] mb-2 glow-shimmer">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
 
@@ -65,6 +65,14 @@ const TestimonialsSection = () => {
           className="w-20 h-20"
         />
       </div>
+
+      {/* Golden Particles */}
+      <div className="golden-particle golden-particle-medium" style={{ top: "10%", left: "8%", animationDelay: "0s" }}></div>
+      <div className="golden-particle golden-particle-small golden-particle-float" style={{ top: "25%", right: "10%", animationDelay: "2s" }}></div>
+      <div className="golden-particle golden-particle-small golden-particle-drift" style={{ bottom: "20%", left: "5%", animationDelay: "1.5s" }}></div>
+      <div className="golden-particle golden-particle-medium" style={{ bottom: "10%", right: "8%", animationDelay: "0.7s" }}></div>
+      <div className="golden-particle golden-particle-small" style={{ top: "45%", left: "12%", animationDelay: "1s" }}></div>
+      <div className="golden-particle golden-particle-small" style={{ bottom: "30%", right: "15%", animationDelay: "2.5s" }}></div>
     </section>
   );
 };

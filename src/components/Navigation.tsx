@@ -12,40 +12,50 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto px-6 py-3">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center text-[#58413c] font-semibold text-2xl font-serif ">
           {/* ✅ Logo in top-left corner */}
-          <div className="absolute top-4 left-6">
+          {/* <div className="absolute top-4 left-6">
             <img
               src={logo}
               alt="Righttsign Tarot Logo"
               className="h-20 w-auto cursor-pointer"
               onClick={() => scrollToSection("home")} // optional scroll to top
             />
-          </div>
+          </div> */}
 
           {/* ✅ Nav Links on Right */}
-          <div className="flex justify-end items-center mt-6 gap-8 ml-auto">
+          
+            <div className="container flex justify-around  items-center mt-6  ml-auto glow-shimmer">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="glow-shimmer"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="glow-shimmer"
             >
-              Projects
+              Services
+            </button>
+            </div>
+           <div className="container flex justify-around items-center mt-6  ml-auto glow-shimmer">
+            <button
+              onClick={() => scrollToSection("events")}
+              className="glow-shimmer"
+            >
+              Events
             </button>
             <button
               onClick={() => scrollToSection("contacts")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="glow-shimmer"
             >
               Contacts
             </button>
+           </div>
           </div>
         </div>
-      </div>
+    
     </nav>
   );
 };

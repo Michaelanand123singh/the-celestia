@@ -1,9 +1,15 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import tarotCards from "@/assets/tarot-cards.jpg";
-
+import bg3 from "@/assets/bg3.png";
 const ContactSection = () => {
   return (
     <section id="contacts" className="py-20 relative overflow-hidden min-h-screen flex items-center">
+      {/* <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${bg3})`,
+        }}
+      ></div> */}
       {/* Large organic blob background */}
       <div className="absolute left-0 bottom-0 w-2/3 h-3/4">
         <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="none">
@@ -20,15 +26,15 @@ const ContactSection = () => {
           {/* Left - Contact Info */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-6xl font-script text-foreground">
+              <h2 className="text-5xl md:text-6xl font-script text-foreground text-shimmer">
                 Connect With Me
               </h2>
               
               <div className="space-y-3">
-                <h3 className="text-2xl font-serif text-foreground">
+                <h3 className="text-2xl font-serif text-foreground glow-shimmer">
                   Sunita Ramrakhiyani
                 </h3>
-                <p className="text-lg text-muted-foreground italic">
+                <p className="text-lg text-muted-foreground italic glow-shimmer">
                   The Light Behind Righttsign Tarot
                 </p>
               </div>
@@ -58,26 +64,26 @@ const ContactSection = () => {
                 href="https://instagram.com/RighttsignTarot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors"
+                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-foreground" />
+                <Instagram className="w-5 h-5 text-foreground relative z-10" />
               </a>
               <a 
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors"
+                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-foreground" />
+                <Linkedin className="w-5 h-5 text-foreground relative z-10" />
               </a>
               <a 
                 href="mailto:contact@righttsigntarot.com"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors"
+                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5 text-foreground" />
+                <Mail className="w-5 h-5 text-foreground relative z-10" />
               </a>
             </div>
 
@@ -88,11 +94,11 @@ const ContactSection = () => {
 
           {/* Right - Tarot Cards Image */}
           <div className="relative flex justify-end">
-            <div className="rounded-3xl overflow-hidden w-full max-w-md shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full max-w-md shadow-2xl golden-border-solid p-2">
               <img 
                 src={tarotCards}
                 alt="Tarot Cards and Oracle Deck"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[600px] object-cover rounded-3xl"
               />
             </div>
 
@@ -113,6 +119,15 @@ const ContactSection = () => {
           <path d="M150 30C150 30 165 45 170 70C175 95 168 115 168 115C168 115 153 100 148 75C143 50 150 30 150 30Z" fill="currentColor" className="text-primary"/>
         </svg>
       </div>
+
+      {/* Golden Particles */}
+      <div className="golden-particle golden-particle-large" style={{ top: "15%", left: "5%", animationDelay: "0s" }}></div>
+      <div className="golden-particle golden-particle-medium golden-particle-float" style={{ top: "30%", right: "8%", animationDelay: "2s" }}></div>
+      <div className="golden-particle golden-particle-small golden-particle-drift" style={{ bottom: "25%", left: "10%", animationDelay: "1.5s" }}></div>
+      <div className="golden-particle golden-particle-medium" style={{ top: "50%", right: "12%", animationDelay: "0.6s" }}></div>
+      <div className="golden-particle golden-particle-small" style={{ bottom: "15%", right: "5%", animationDelay: "1.8s" }}></div>
+      <div className="golden-particle golden-particle-small" style={{ top: "40%", left: "8%", animationDelay: "1s" }}></div>
+      <div className="golden-particle golden-particle-small" style={{ bottom: "35%", right: "20%", animationDelay: "2.5s" }}></div>
     </section>
   );
 };
