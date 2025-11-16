@@ -1,6 +1,7 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import tarotCards from "@/assets/tarot-cards.jpg";
 import bg3 from "@/assets/bg3.png";
+import vectorImage from "@/assets/Vector.png";
 const ContactSection = () => {
   return (
     <section 
@@ -8,22 +9,24 @@ const ContactSection = () => {
       className="py-20 relative overflow-hidden min-h-screen flex items-center"
       style={{ backgroundColor: "#FFF4E1" }}
     >
+      {/* Vector Background Image */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url(${vectorImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 1,
+        }}
+      ></div>
+
       {/* <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bg3})`,
         }}
       ></div> */}
-      {/* Large organic blob background */}
-      <div className="absolute left-0 bottom-0 w-2/3 h-3/4">
-        <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="none">
-          <path
-            d="M0,300 Q100,200 200,250 Q300,300 350,400 Q400,500 300,550 Q200,600 100,550 Q0,500 0,300 Z"
-            fill="hsl(var(--blob-primary))"
-            opacity="0.7"
-          />
-        </svg>
-      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -38,7 +41,7 @@ const ContactSection = () => {
                 <h3 className="text-2xl font-serif text-foreground glow-shimmer">
                   Sunita Ramrakhiyani
                 </h3>
-                <p className="text-lg text-muted-foreground italic glow-shimmer">
+                <p className="text-lg text-muted-foreground italic glow-shimmer hover-shimmer relative overflow-hidden cursor-pointer transition-all duration-300 hover:text-[#FFD700]">
                   The Light Behind Righttsign Tarot
                 </p>
               </div>
@@ -46,7 +49,7 @@ const ContactSection = () => {
               <div className="space-y-4 pt-6">
                 <a 
                   href="tel:+919016675446"
-                  className="block text-xl font-medium text-foreground hover:text-primary transition-colors"
+                  className="block text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer"
                 >
                   +91 9016675446
                 </a>
@@ -55,7 +58,7 @@ const ContactSection = () => {
                   href="https://instagram.com/RighttsignTarot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-xl font-medium text-foreground hover:text-primary transition-colors"
+                  className="block text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer"
                 >
                   @RighttsignTarot
                 </a>
@@ -91,7 +94,7 @@ const ContactSection = () => {
               </a>
             </div>
 
-            <p className="text-sm text-muted-foreground pt-8">
+            <p className="text-sm pt-8 font-bold" style={{ color: "#FFF4E1" }}>
               Righttsign © 2025 - 2026
             </p>
           </div>

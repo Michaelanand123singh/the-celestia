@@ -8,6 +8,8 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import testimonialPhoto from "@/assets/testimonial-photo.jpg";
+import feedbackBg from "@/assets/feedback_bg.png";
+import feedbackClientBg from "@/assets/feedbackclientbg.png";
 
 const testimonials = [
   {
@@ -78,7 +80,33 @@ const TestimonialsSection = () => {
 
 
   return (
-    <section className="relative bg-[#f3ede7] py-24 overflow-hidden flex justify-center items-center">
+    <section className="relative bg-[#f3ede7] py-24 overflow-visible flex justify-center items-center">
+      {/* Feedback Background Image */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url(${feedbackBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 1,
+        }}
+      ></div>
+
+      {/* ===== Square Shape with feedbackclientbg.png (outside card) ===== */}
+      <div 
+        className="absolute z-0 w-[600px] h-[500px] md:w-[650px] md:h-[570px] pointer-events-none"
+        style={{
+          backgroundImage: `url(${feedbackClientBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          top: "50%",
+          left: "70%",
+          transform: "translate(-50%, -50%)",
+        }}
+      ></div>
+
       <Carousel
         setApi={setApi}
         opts={{
@@ -87,7 +115,7 @@ const TestimonialsSection = () => {
           duration: 30,
           dragFree: false,
         }}
-        className="w-full carousel-smooth"
+        className="w-full carousel-smooth relative z-10"
       >
         <CarouselContent>
           {testimonials.map((testimonial, i) => (
@@ -97,13 +125,8 @@ const TestimonialsSection = () => {
                   current === i ? "fade-in" : "fade-out"
                 }`}
               >
-                {/* ===== Background soft layer ===== */}
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <div className="absolute w-[80%] md:w-[70%] h-[65%] bg-[#f8f4f2] rounded-md translate-x-[40px] translate-y-[30px] shadow-md"></div>
-                </div>
-
                 {/* ===== Foreground Card ===== */}
-                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[85%] md:w-[70%] flex flex-col md:flex-row items-center md:items-center p-6 md:p-10">
+                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[75%] md:w-[60%] flex flex-col md:flex-row items-center md:items-center p-6 md:p-10">
                   {/* === Left Image (Oval Capsule Shape) === */}
                   <div className="relative md:-ml-44 -mt-10 md:mt-0">
                     <div className="w-[200px] h-[300px] md:w-[260px] md:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">

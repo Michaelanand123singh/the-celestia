@@ -112,13 +112,13 @@ const ServicesSection = () => {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {services.map((service, i) => (
-                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-full md:basis-1/3 min-w-0">
-                    <div className="flex-1 bg-transparent">
-                      <figure className="w-full">
+                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-full md:basis-1/3 min-w-0 flex">
+                    <div className="flex-1 bg-transparent flex flex-col h-full">
+                      <figure className="w-full flex flex-col h-full">
                         {/* Container with arched top using SVG clip-path */}
                         <div
-                          className="w-full block relative overflow-hidden service-image-container"
-                          style={{ height: "380px" }}
+                          className="w-full block relative overflow-hidden service-image-container flex-shrink-0"
+                          style={{ height: "430px" }}
                         >
                           <svg
                             width="0"
@@ -145,16 +145,46 @@ const ServicesSection = () => {
                         </div>
 
                         {/* Text below image */}
-                        <figcaption className="mt-4 text-center">
-                          <div className="text-xs text-[#A37F76] tracking-widest font-semibold uppercase">
-                            {service.name.split(" ")[0]}
+                        <figcaption className="mt-4 text-center flex flex-col flex-1 min-h-[180px]">
+                          <div className="flex-shrink-0">
+                            <div className="text-xs text-[#A37F76] tracking-widest font-semibold uppercase">
+                              {service.name.split(" ")[0]}
+                            </div>
+                            <div className="mt-1 text-lg md:text-xl font-serif text-[#3A1D0F] font-bold">
+                              {service.name}
+                            </div>
+                            <div className="mt-2 text-sm text-[#5C4330] italic">
+                              {service.description}
+                            </div>
                           </div>
-                          <div className="mt-1 text-lg md:text-xl font-serif text-[#3A1D0F] font-bold">
-                            {service.name}
-                          </div>
-                          <div className="mt-2 text-sm text-[#5C4330] italic">
-                            {service.description}
-                          </div>
+                          {/* Read More Button with Gate Shape */}
+                          <button 
+                            className="mt-auto relative gate-shape-button group mx-auto block flex-shrink-0"
+                            style={{
+                              clipPath: "polygon(12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 90%, 0% 10%)",
+                              padding: "10px 28px",
+                              background: "#B48B80",
+                              border: "none",
+                              cursor: "pointer",
+                              transition: "all 0.3s ease",
+                              borderRadius: "16px",
+                              boxShadow: "0 4px 15px rgba(180, 139, 128, 0.3), 0 0 20px rgba(180, 139, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.boxShadow = "0 6px 20px rgba(180, 139, 128, 0.5), 0 0 30px rgba(180, 139, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)";
+                              e.currentTarget.style.transform = "translateY(-2px)";
+                              e.currentTarget.style.background = "#A37F76";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.boxShadow = "0 4px 15px rgba(180, 139, 128, 0.3), 0 0 20px rgba(180, 139, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)";
+                              e.currentTarget.style.transform = "translateY(0)";
+                              e.currentTarget.style.background = "#B48B80";
+                            }}
+                          >
+                            <span className="relative z-10 text-white font-semibold text-sm uppercase tracking-wide">
+                              Read More
+                            </span>
+                          </button>
                         </figcaption>
                       </figure>
                     </div>
