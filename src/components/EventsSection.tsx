@@ -3,53 +3,53 @@ import soundBowl from "@/assets/image6.png";
 
 const EventsSection = () => {
   return (
-    <section className="bg-[#b48b80] max-h-[70vh] min-h-[70vh] pb-10 px-6 md:px-20 overflow-hidden relative">
+    <section className="bg-[#b48b80] min-h-[auto] md:max-h-[70vh] md:min-h-[70vh] pb-10 pt-20 md:pt-0 px-4 sm:px-6 md:px-20 overflow-hidden relative">
       {/* ===== Image-based Marquee (Top Corner) ===== */}
-      <div className="absolute top-[20px] left-0 w-full overflow-hidden z-30 glow-shimmer">
+      <div className="absolute top-[-15px] sm:top-[-10px] md:top-[20px] left-0 w-full overflow-hidden z-30 glow-shimmer">
         <div className="relative whitespace-nowrap">
-          <div className="inline-flex mt-3 will-change-transform animate-marquee">
+          <div className="inline-flex mt-2 sm:mt-3 will-change-transform animate-marquee">
             {/* Duplicate image for infinite scroll */}
             <img
               src={marqueeImg}
               alt="Explore Our Events & Highlight"
-              className="h-[70px] md:h-[70px] object-contain mx-6"
+              className="h-[80px] sm:h-[75px] md:h-[70px] object-contain mx-3 sm:mx-4 md:mx-6"
             />
             <img
               src={marqueeImg}
               alt="Explore Our Events & Highlight"
-              className="h-[70px] md:h-[70px] object-contain mx-6"
+              className="h-[80px] sm:h-[75px] md:h-[70px] object-contain mx-3 sm:mx-4 md:mx-6"
             />
             <img
               src={marqueeImg}
               alt="Explore Our Events & Highlight"
-              className="h-[70px] md:h-[70px] object-contain mx-6"
+              className="h-[80px] sm:h-[75px] md:h-[70px] object-contain mx-3 sm:mx-4 md:mx-6"
             />
             <img
               src={marqueeImg}
               alt="Explore Our Events & Highlight"
-              className="h-[70px] md:h-[70px] object-contain mx-6"
+              className="h-[80px] sm:h-[75px] md:h-[70px] object-contain mx-3 sm:mx-4 md:mx-6"
             />
           </div>
         </div>
       </div>
 
       {/* ===== Main Event Section ===== */}
-      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] gap-10 items-start mt-10 md:mt-20 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] gap-6 md:gap-10 items-start mt-16 sm:mt-20 md:mt-20 relative z-10">
         {/* Event Image */}
-        <div className="relative w-full -mt-16 md:-mt-28 z-0">
+        <div className="relative w-full -mt-8 sm:-mt-12 md:-mt-28 z-0 flex justify-center md:justify-start">
           <img
             src={soundBowl}
             alt="Sound Bowl Event"
-            className="w-[400px] h-[400px] md:w-[450px] md:h-[450px] object-cover mx-auto md:mx-0 rounded-xl shadow-lg border-shimmer p-2"
+            className="w-full max-w-[280px] sm:max-w-[350px] md:w-[400px] h-auto aspect-square md:h-[400px] lg:w-[450px] lg:h-[450px] object-cover mx-auto md:mx-0 rounded-xl shadow-lg border-shimmer p-2"
           />
         </div>
 
         {/* Text Content */}
-        <div className="text-white mt-5 md:mt-10">
-          <h3 className="font-waterfall text-[3.5rem] md:text-[2rem] font-[700] italic mb-3 font-[cursive] text-shimmer">
+        <div className="text-white mt-4 md:mt-10 text-center md:text-left">
+          <h3 className="font-waterfall text-[28px] sm:text-[36px] md:text-[32px] lg:text-[2rem] font-[700] italic mb-3 font-[cursive] text-shimmer">
             Hostel Kute's First-Ever Aqua Sound Healing Event in Gandhinagar
           </h3>
-          <p className="text-[0.95rem] leading-relaxed max-w-[520px]">
+          <p className="text-[14px] sm:text-[15px] md:text-[0.95rem] leading-relaxed max-w-full md:max-w-[520px]">
             Dive into a world of profound healing and memorable experience. This is where you can explore the unique
             gathering we host, designed to bring inner peace and connection right to your community.
           </p>

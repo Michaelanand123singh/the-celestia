@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
 
 
   return (
-    <section className="relative bg-[#f3ede7] py-24 overflow-visible flex justify-center items-center">
+    <section className="relative bg-[#f3ede7] py-12 sm:py-16 md:py-24 overflow-hidden md:overflow-visible flex justify-center items-center">
       {/* Feedback Background Image */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
 
       {/* ===== Square Shape with feedbackclientbg.png (outside card) ===== */}
       <div 
-        className="absolute z-0 w-[600px] h-[500px] md:w-[650px] md:h-[570px] pointer-events-none"
+        className="absolute z-0 w-[300px] h-[250px] sm:w-[400px] sm:h-[350px] md:w-[600px] md:h-[500px] lg:w-[650px] lg:h-[570px] pointer-events-none hidden md:block"
         style={{
           backgroundImage: `url(${feedbackClientBg})`,
           backgroundSize: "cover",
@@ -126,10 +126,10 @@ const TestimonialsSection = () => {
                 }`}
               >
                 {/* ===== Foreground Card ===== */}
-                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[75%] md:w-[60%] flex flex-col md:flex-row items-center md:items-center p-6 md:p-10">
+                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[90%] sm:w-[85%] md:w-[75%] lg:w-[60%] flex flex-col md:flex-row items-center md:items-center p-4 sm:p-6 md:p-10 overflow-visible md:overflow-visible">
                   {/* === Left Image (Oval Capsule Shape) === */}
-                  <div className="relative md:-ml-44 -mt-10 md:mt-0">
-                    <div className="w-[200px] h-[300px] md:w-[260px] md:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
+                  <div className="relative md:-ml-32 lg:-ml-44 mt-0 md:mt-0 flex-shrink-0">
+                    <div className="w-[150px] h-[220px] sm:w-[180px] sm:h-[260px] md:w-[220px] md:h-[320px] lg:w-[260px] lg:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -139,21 +139,21 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* === Right Text Content === */}
-                  <div className="md:ml-10 mt-6 md:mt-0 text-center md:text-left max-w-[600px]">
-                    <h2 className="text-[1.8rem] md:text-[2rem] font-serif text-[#1a1a1a] mb-4 text-shimmer">
+                  <div className="md:ml-6 lg:ml-10 mt-4 sm:mt-6 md:mt-0 text-center md:text-left max-w-full md:max-w-[600px]">
+                    <h2 className="text-[1.4rem] sm:text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-serif text-[#1a1a1a] mb-3 sm:mb-4 text-shimmer">
                       HAPPY CLIENTS
                     </h2>
 
-                    <h3 className="text-[1.1rem] md:text-[1.25rem] font-semibold text-[#222] mb-3 glow-shimmer">
+                    <h3 className="text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] lg:text-[1.25rem] font-semibold text-[#222] mb-2 sm:mb-3 glow-shimmer">
                       {testimonial.title}
                     </h3>
 
-                    <p className="text-[#444] leading-relaxed text-[0.95rem] italic mb-4">
+                    <p className="text-[#444] leading-relaxed text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] italic mb-3 sm:mb-4">
                       "{testimonial.text}"
                     </p>
 
                     {/* === Star rating === */}
-                    <div className="flex justify-center md:justify-start text-[#f6c744] text-[1.1rem] mb-2 glow-shimmer">
+                    <div className="flex justify-center md:justify-start text-[#f6c744] text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] mb-2 glow-shimmer">
                       {Array.from({ length: testimonial.rating }).map(
                         (_, idx) => (
                           <span key={idx}>★</span>
@@ -162,10 +162,10 @@ const TestimonialsSection = () => {
                     </div>
 
                     <div>
-                      <p className="font-semibold text-[#222] text-[0.95rem]">
+                      <p className="font-semibold text-[#222] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem]">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-[#777]">{testimonial.role}</p>
+                      <p className="text-xs sm:text-sm text-[#777]">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
@@ -173,8 +173,8 @@ const TestimonialsSection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
-        <CarouselNext className="right-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
+        <CarouselPrevious className="left-2 sm:left-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
+        <CarouselNext className="right-2 sm:right-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
       </Carousel>
 
       {/* ===== Decorative Feathers ===== */}

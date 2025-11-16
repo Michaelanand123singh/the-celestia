@@ -23,7 +23,7 @@ const PodcastSection = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#FFF4E1] max-h-[70vh] min-h-[70vh] relative overflow-hidden flex items-center"
+      className="bg-[#FFF4E1] min-h-auto md:max-h-[70vh] md:min-h-[70vh] relative overflow-hidden flex items-center py-12 md:py-0"
       style={{
         backgroundColor: "#FFF4E1",
       }}
@@ -94,28 +94,28 @@ const PodcastSection = () => {
       </div>
 
       {/* Content Layer */}
-      <div className="container mx-auto px-6 md:px-20 relative z-20 w-full py-4">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-20 w-full py-4">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Left - Description */}
           <div className="relative flex flex-col justify-center space-y-2 md:space-y-3 order-2 md:order-1">
             {/* Section Label */}
             <div className="mb-1">
-              <span className="inline-block text-xs md:text-sm font-semibold text-[#A37F76] uppercase tracking-wider">
+              <span className="inline-block text-xs sm:text-sm font-semibold text-[#A37F76] uppercase tracking-wider">
                 Explore Our Podcast
               </span>
             </div>
 
             {/* Main Heading */}
-            <h2 className="font-serif text-[28px] md:text-[32px] font-bold text-[#3A1D0F] leading-tight mb-2">
+            <h2 className="font-serif text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#3A1D0F] leading-tight mb-2 text-center md:text-left">
               <span className="text-shimmer-white">Tarot Wisdom</span>
               <br />
-              <span className="text-[#A37F76] font-waterfall text-[40px] md:text-[48px]">
+              <span className="text-[#A37F76] font-waterfall text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px]">
                 Unveiled
               </span>
             </h2>
 
             {/* Description Content */}
-            <div className="space-y-2 text-[#5C4330] leading-relaxed text-[16px] md:text-[18px] text-justify">
+            <div className="space-y-2 text-[#5C4330] leading-relaxed text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] text-justify">
               <p>
                 Embark on a mystical journey through the ancient art of tarot
                 reading in our captivating podcast series. Each episode delves
@@ -132,8 +132,8 @@ const PodcastSection = () => {
               </p>
 
               <div className="pt-2">
-                <div className="w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg border-shimmer bg-shimmer-white p-2 md:p-3">
-                  <span className="font-waterfall text-[32px] md:text-[36px] font-[800] text-[#3A1D0F]">
+                <div className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg border-shimmer bg-shimmer-white p-2 md:p-3">
+                  <span className="font-waterfall text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-[800] text-[#3A1D0F] block text-center md:text-left">
                     "The cards reveal what the heart already knows."
                   </span>
                 </div>
@@ -144,7 +144,7 @@ const PodcastSection = () => {
 
           {/* Right - Video Thumbnail/Embed */}
           <div className="relative flex justify-center md:justify-end order-1 md:order-2">
-            <div className="relative w-full max-w-[500px] md:max-w-[550px] group">
+            <div className="relative w-full max-w-full sm:max-w-[500px] md:max-w-[550px] group">
               {!isPlaying ? (
                 <div
                   className={`relative rounded-[30px] overflow-hidden shadow-2xl transition-all duration-300 image-shimmer ${
@@ -185,9 +185,9 @@ const PodcastSection = () => {
                     {/* Play Button Overlay */}
                     {hasValidVideoId && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300">
-                        <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                           <svg
-                            className="w-10 h-10 text-[#B48B80] ml-1"
+                            className="w-8 h-8 sm:w-10 sm:h-10 text-[#B48B80] ml-1"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >

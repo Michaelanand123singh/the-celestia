@@ -6,7 +6,7 @@ const ContactSection = () => {
   return (
     <section 
       id="contacts" 
-      className="py-20 relative overflow-hidden min-h-screen flex items-center"
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden min-h-auto md:min-h-screen flex items-center"
       style={{ backgroundColor: "#FFF4E1" }}
     >
       {/* Vector Background Image */}
@@ -28,28 +28,28 @@ const ContactSection = () => {
         }}
       ></div> */}
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left - Contact Info */}
-          <div className="space-y-12">
-            <div className="space-y-6">
-              <h2 className="text-5xl md:text-6xl font-script text-foreground text-shimmer">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12 order-2 md:order-1">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script text-foreground text-shimmer text-center md:text-left">
                 Connect With Me
               </h2>
               
-              <div className="space-y-3">
-                <h3 className="text-2xl font-serif text-foreground glow-shimmer">
+              <div className="space-y-2 sm:space-y-3 text-center md:text-left">
+                <h3 className="text-xl sm:text-2xl font-serif text-foreground glow-shimmer">
                   Sunita Ramrakhiyani
                 </h3>
-                <p className="text-lg text-muted-foreground italic glow-shimmer hover-shimmer relative overflow-hidden cursor-pointer transition-all duration-300 hover:text-[#FFD700]">
+                <p className="text-base sm:text-lg text-muted-foreground italic glow-shimmer hover-shimmer relative overflow-hidden cursor-pointer transition-all duration-300 hover:text-[#FFD700]">
                   The Light Behind Righttsign Tarot
                 </p>
               </div>
 
-              <div className="space-y-4 pt-6">
+              <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6">
                 <a 
                   href="tel:+919016675446"
-                  className="block text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer"
+                  className="block text-lg sm:text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer text-center md:text-left"
                 >
                   +91 9016675446
                 </a>
@@ -58,7 +58,7 @@ const ContactSection = () => {
                   href="https://instagram.com/RighttsignTarot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer"
+                  className="block text-lg sm:text-xl font-medium text-foreground hover:text-[#FFD700] transition-colors hover-shimmer glow-shimmer relative overflow-hidden cursor-pointer text-center md:text-left"
                 >
                   @RighttsignTarot
                 </a>
@@ -66,52 +66,52 @@ const ContactSection = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-6 pt-6">
+            <div className="flex gap-4 sm:gap-6 pt-4 sm:pt-6 justify-center md:justify-start">
               <a 
                 href="https://instagram.com/RighttsignTarot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-foreground relative z-10" />
+                <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-foreground relative z-10" />
               </a>
               <a 
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-foreground relative z-10" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-foreground relative z-10" />
               </a>
               <a 
                 href="mailto:contact@righttsigntarot.com"
-                className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-foreground/10 hover:bg-primary/30 flex items-center justify-center transition-colors hover-shimmer glow-shimmer relative overflow-hidden"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5 text-foreground relative z-10" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-foreground relative z-10" />
               </a>
             </div>
 
-            <p className="text-sm pt-8 font-bold" style={{ color: "#FFF4E1" }}>
+            <p className="text-xs sm:text-sm pt-6 sm:pt-8 font-bold text-center md:text-left" style={{ color: "#FFF4E1" }}>
               Righttsign © 2025 - 2026
             </p>
           </div>
 
           {/* Right - Tarot Cards Image */}
-          <div className="relative flex justify-end">
-            <div className="rounded-3xl overflow-hidden w-full max-w-md shadow-2xl golden-border-solid p-2">
+          <div className="relative flex justify-center md:justify-end order-1 md:order-2">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden w-full max-w-full sm:max-w-md shadow-2xl golden-border-solid p-2">
               <img 
                 src={tarotCards}
                 alt="Tarot Cards and Oracle Deck"
-                className="w-full h-[600px] object-cover rounded-3xl"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl sm:rounded-3xl"
               />
             </div>
 
             {/* Decorative bird element */}
-            <div className="absolute -top-10 -right-10 opacity-20">
-              <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 opacity-20 hidden md:block">
+              <svg width="80" height="80" className="sm:w-[120px] sm:h-[120px]" viewBox="0 0 120 120" fill="none">
                 <path d="M60 20 L70 45 L95 50 L77.5 67.5 L82 92 L60 80 L38 92 L42.5 67.5 L25 50 L50 45 Z" fill="currentColor" className="text-warm-cream"/>
               </svg>
             </div>

@@ -97,8 +97,8 @@ const ServicesSection = () => {
   const serviceListKey = `services-${Math.floor(current / 3)}`;
 
   return (
-    <section id="services" className="w-full bg-[#FFF4E1] py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="w-full bg-[#FFF4E1] py-12 md:py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Left area: Carousel with three service cards */}
           <div className="md:col-span-2 relative">
@@ -112,13 +112,16 @@ const ServicesSection = () => {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {services.map((service, i) => (
-                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-full md:basis-1/3 min-w-0 flex">
+                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 min-w-0 flex">
                     <div className="flex-1 bg-transparent flex flex-col h-full">
                       <figure className="w-full flex flex-col h-full">
                         {/* Container with arched top using SVG clip-path */}
                         <div
                           className="w-full block relative overflow-hidden service-image-container flex-shrink-0"
-                          style={{ height: "430px" }}
+                          style={{ 
+                            height: "430px",
+                            aspectRatio: "auto"
+                          }}
                         >
                           <svg
                             width="0"
@@ -197,15 +200,15 @@ const ServicesSection = () => {
           </div>
 
           {/* Right panel */}
-          <aside className="bg-[#f3e7dd] rounded-md p-8 flex flex-col items-center text-center justify-center border-shimmer">
-            <h3 className="text-4xl md:text-5xl font-serif text-[#3A1D0F] text-shimmer-white">
+          <aside className="bg-[#f3e7dd] rounded-md p-6 sm:p-8 flex flex-col items-center text-center justify-center border-shimmer">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#3A1D0F] text-shimmer-white">
               MY SERVICES
             </h3>
-            <p className="text-4xl md:text-5xl italic text-[#A37F76] mt-1 font-waterfall">
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-[#A37F76] mt-1 font-waterfall">
               and offers
             </p>
 
-            <nav className="mt-6 flex flex-col gap-4 w-full relative min-h-[120px]">
+            <nav className="mt-4 sm:mt-6 flex flex-col gap-3 sm:gap-4 w-full relative min-h-[100px] sm:min-h-[120px]">
               <div 
                 key={serviceListKey} 
                 className="service-list-fade flex flex-col gap-4 w-full"
@@ -214,7 +217,7 @@ const ServicesSection = () => {
                   <a
                     key={`${current}-${i}`}
                     href="#"
-                    className="text-lg md:text-xl underline underline-offset-4 font-medium text-[#3A1D0F] hover:text-[#A37F76] transition-colors"
+                    className="text-base sm:text-lg md:text-xl underline underline-offset-4 font-medium text-[#3A1D0F] hover:text-[#A37F76] transition-colors"
                   >
                     {service.name.toUpperCase()}
                   </a>
@@ -222,7 +225,7 @@ const ServicesSection = () => {
               </div>
             </nav>
 
-            <button className="mt-8 px-8 py-2 rounded-md tracking-wide mx-auto font-semibold relative overflow-hidden group golden-button">
+            <button className="mt-6 sm:mt-8 px-6 sm:px-8 py-2 rounded-md tracking-wide mx-auto font-semibold relative overflow-hidden group golden-button text-sm sm:text-base">
               <span className="relative z-10 text-white/95 uppercase drop-shadow-lg">BOOK SESSION</span>
               {/* Base metallic gradient */}
               <div 
@@ -337,10 +340,33 @@ const ServicesSection = () => {
           }
         }
         
-        @media (max-width: 768px) {
+        /* Maintain gate shape proportions across all screen sizes */
+        /* The clip-path uses objectBoundingBox units (0-1) so it scales proportionally */
+        @media (max-width: 640px) {
           .service-image-container {
-            height: 240px !important;
+            height: 320px !important;
+            min-height: 320px !important;
           }
+        }
+        @media (min-width: 641px) and (max-width: 768px) {
+          .service-image-container {
+            height: 380px !important;
+            min-height: 380px !important;
+          }
+        }
+        @media (min-width: 769px) {
+          .service-image-container {
+            height: 430px !important;
+            min-height: 430px !important;
+          }
+        }
+        
+        /* Ensure clip-path is properly applied on all devices */
+        .service-image-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
       `}</style>
     </section>
