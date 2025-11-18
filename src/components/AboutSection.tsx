@@ -1,6 +1,6 @@
 import aboutPhoto from "@/assets/2.png";
 import aboutBg from "@/assets/aboutbackground.png";
-
+import bgforabout from "@/assets/bgab.png";
 const AboutSection = () => {
   return (
     <section
@@ -14,7 +14,7 @@ const AboutSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(${aboutBg})`,
+          backgroundImage: `url(${bgforabout})`,
         }}
       ></div>
 
