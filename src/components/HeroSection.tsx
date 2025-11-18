@@ -5,7 +5,7 @@ import bglotus from "@/assets/bglotus.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center pt-20"
+      className="relative min-h-[35vh] md:min-h-screen flex flex-col md:flex-row items-center md:items-center pt-16 pb-2 md:pt-20 md:pb-0 overflow-x-hidden md:overflow-x-visible"
       style={{ backgroundColor: "#FFF4E1" }}
       id="home"
     >
@@ -19,44 +19,41 @@ const HeroSection = () => {
         }}
       ></div> */}
 
-      {/* LEFT CONTENT */}
-      <div className="container mx-auto px-6 grid md:grid-cols-2 items-center relative z-30 ">
-        <div className="space-y-3 md:pl-10 lg:pl-6 font-semibold">
-          <h1
-            className="text-[46px] sm:text-[52px] md:text-[60px] lg:text-[70px] font-serif font-bold leading-none text-shimmer-white"
-            style={{
-              lineHeight: "1.1",
-              letterSpacing: "-0.5px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Meet Sunita Ramrakhiyani
-          </h1>
+      {/* CONTENT CONTAINER */}
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 relative z-30 w-full">
+        {/* Mobile Layout: Text first, then image */}
+        <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-6 md:gap-0">
+          {/* TEXT CONTENT */}
+          <div className="space-y-3 md:pl-10 lg:pl-6 font-semibold order-1 w-full">
+            <h1
+              className="text-[32px] sm:text-[42px] md:text-[46px] lg:text-[60px] xl:text-[70px] font-serif font-bold leading-none text-shimmer-white"
+              style={{
+                lineHeight: "1.1",
+                letterSpacing: "-0.5px",
+              }}
+            >
+              <span className="md:whitespace-nowrap">Meet Sunita Ramrakhiyani</span>
+            </h1>
 
-          <p
-            className="text-[50px]  md:text-[52px] flex items-center gap-3 glow-shimmer font-waterfall "
-            style={{ color: "#7A5D4C" }}
-          >
-            <span className="text-[28px]">—</span>
-            <span className="font-medium">The Light Behind Righttsign Tarot</span>
-          </p>
+            <p
+              className="text-[24px] sm:text-[32px] md:text-[50px] lg:text-[52px] flex items-center gap-2 sm:gap-3 glow-shimmer font-waterfall"
+              style={{ color: "#7A5D4C" }}
+            >
+              <span className="text-[18px] sm:text-[24px] md:text-[28px]">—</span>
+              <span className="font-medium">The Light Behind Righttsign Tarot</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* RIGHT IMAGE */}
+      {/* IMAGE - Mobile: Centered in flow, Desktop: Absolute positioned */}
       <div
-        className="absolute bottom-[-150px] flex items-end z-20"
-        style={{
-          right: 132, // keep image contained inside viewport
-        }}
+        className="relative md:absolute bottom-0 md:bottom-[-150px] right-0 md:right-[132px] flex items-center md:items-end justify-center md:justify-start z-20 w-auto md:w-auto mt-4 md:mt-0 px-0 md:px-0"
       >
         <img
           src={heroPortrait}
           alt="Sunita Ramrakhiyani - Righttsign Tarot"
-          className="max-h-[140vh] object-contain"
-          style={{
-            transform: "translateX(10%)", // moves image slightly outside section visually
-          }}
+          className="h-[110vh] sm:h-[120vh] md:max-h-[140vh] w-auto md:w-auto scale-110 sm:scale-110 md:scale-100 object-contain mx-auto md:mx-0 md:translate-x-[16%]"
         />
       </div>
 
