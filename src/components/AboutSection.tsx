@@ -1,8 +1,8 @@
 import aboutPhoto from "@/assets/2.png";
 import aboutBg from "@/assets/aboutbackground.png";
-import bgforabout from "@/assets/bgab.png";
+import bgforabout from "@/assets/bgabou.png";
 const AboutSection = () => {
-  return (
+  return (  
     <section
       id="about"
       className="py-20 relative overflow-visible"
